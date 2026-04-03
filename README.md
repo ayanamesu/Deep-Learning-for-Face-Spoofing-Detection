@@ -12,7 +12,7 @@ Dataset used: FakeAVCeleb_v1.2
 
 The dataset is way too big for it to be uploaded to github.
 
-###How to set up dataset:
+### How to set up dataset:
 Download FakeAVCeleb_v1.2 via the canvas conversation
 Extract the folder
 Place it in the project directory
