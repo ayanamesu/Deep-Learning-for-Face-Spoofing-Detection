@@ -1,0 +1,9 @@
+# Ignore dataset folder
+FakeAVCeleb_v1.2/
+
+# Ignore all video files
+*.mp4
+
+# Ignore zip files
+*.zip
+
