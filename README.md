@@ -35,7 +35,9 @@ Install required libraries. (This is according to my code to Readme set up so it
 
 ## Project Structure
 1. FakeAVCeleb_v1.2 -> dataset
-2. deep_learning_based_face_spoofing_detection -> overleaf report
-3. face_spoofing.ipynb → Main training and evaluation notebook
-4. meta_data.csv → Dataset metadata
-5. ReadME.md -> current file 
+2. meta_data.csv → inside of FakeAVCeleb_v1.2 folder Dataset metadata
+3. deep_learning_based_face_spoofing_detection -> overleaf report
+4. face_spoofing.ipynb → Main training and evaluation notebook
+5. meta_data.csv → Dataset metadata
+6. ReadME.md -> current file 
+7. requirements.txt -> the run command 
