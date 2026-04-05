@@ -31,3 +31,11 @@ Install required libraries. (This is according to my code to Readme set up so it
 2. Clone and open the repository then open "face_spoofing.ipynb"
 3. Select the python kernel
 4. Run the cells in order
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## Project Structure
+FakeAVCeleb_v1.2 -> dataset
+deep_learning_based_face_spoofing_detection -> overleaf report
+face_spoofing.ipynb → Main training and evaluation notebook
+meta_data.csv → Dataset metadata
+ReadME.md -> current file 
