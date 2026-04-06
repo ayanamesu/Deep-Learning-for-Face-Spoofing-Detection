@@ -11,9 +11,10 @@ The system processes video data by extracting frames and using a Convolutional N
 Dataset used: FakeAVCeleb_v1.2
 
 The dataset is way too big for it to be uploaded to github.
+You can access the dataset via google drive from Sravani Gurram since they sent it to 4 people.
 
 ### How to set up dataset:
-Download FakeAVCeleb_v1.2 via the canvas conversation
+Download FakeAVCeleb_v1.2 via the canvas conversation, Google drive sent by Sravani Gurram
 Extract the folder
 Place it in the project directory
 
