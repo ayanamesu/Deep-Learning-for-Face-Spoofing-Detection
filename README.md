@@ -1,22 +1,59 @@
 # Deep-Learning-for-Face-Spoofing-Detection
 
 ## Project Overview
-This project is to use CNN deep learning model to detect whether a face is real or spoofed using the FakeAVCeleb dataset.
-
-The system processes video data by extracting frames and using a Convolutional Neural Network (CNN) to classify faces.
+This project implements a CNN-based deepfake detection system to classify whether a face video 
+is real or spoofed using the FakeAVCeleb_v1.2 dataset. The system extracts frames from videos, 
+preprocesses them using MobileNetV2 preprocessing, and trains a fine-tuned MobileNetV2 
+classifier to distinguish real from fake faces.
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Data Set
-Dataset used: FakeAVCeleb_v1.2
-
-The dataset is way too big for it to be uploaded to github.
-You can access the dataset via google drive from Sravani Gurram since they sent it to 4 people.
+- **Dataset:** FakeAVCeleb_v1.2
+- **Total videos:** 21,544 (1,000 real, 20,544 fake)
+- **Subjects:** Multiple races and genders                              <---------->
+- **Modalities:** Video (.mp4)
+- **Resolution:** Frames resized to 128x128 during preprocessing
+- **Access:** Dataset is too large for GitHub. Download via Google Drive shared 
+  by Sravani Gurram (accessible through Canvas conversation)
 
 ### How to set up dataset:
-Download FakeAVCeleb_v1.2 via the canvas conversation, Google drive sent by Sravani Gurram
-Extract the folder
-Place it in the project directory
+1. Download FakeAVCeleb_v1.2 from the shared Google Drive link on Canvas
+2. Extract the folder
+3. Place it in the root project directory so the path is:
+   `FakeAVCeleb_v1.2/FakeAVCeleb_v1.2/`
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## Preprocessing Pipeline
+1. Videos are split 80/20 into train and test sets with stratification
+2. All real videos are forced into training to handle class imbalance (800 real, 3000 fake sampled)
+3. Frames are extracted using random sampling (15 frames per video)
+4. Face detection applied using Haar Cascade before resizing to 128x128
+5. MobileNetV2 preprocessing applied (scales pixels to [-1, 1])
+6. Training set balanced to 3:1 fake/real ratio using undersampling
+7. Class weights set to {fake: 1.0, real: 3.0} to penalize minority class errors
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Model Architecture
+- Base: MobileNetV2 pretrained on ImageNet (last 80 layers unfrozen)
+- GlobalAveragePooling2D
+- Dense(256, relu)
+- BatchNormalization
+- Dropout(0.4)
+- Dense(1, sigmoid)
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## Results
+| Metric | Value |
+|--------|-------|
+| Accuracy | 97.4% |
+| EER | 2.6% |
+| FAR | 2.6% |
+| FRR | 2.7% |
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -28,10 +65,12 @@ Install required libraries. (This is according to my code to Readme set up so it
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 ## How to Run
-1. open project in desired IDE
-2. Clone and open the repository then open "face_spoofing.ipynb"
-3. Select the python kernel
-4. Run the cells in order
+1. Clone the repository
+2. Set up the dataset as described above
+3. Open `face_spoofing.ipynb` in Jupyter Notebook or JupyterLab
+4. Select the Python kernel
+5. Run all cells in order from top to bottom
+
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Project Structure
