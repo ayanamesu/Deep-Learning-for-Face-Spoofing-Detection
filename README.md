@@ -17,7 +17,9 @@ classifier to distinguish real from fake faces.
 - **Access:** Dataset is too large for GitHub. Download via Google Drive shared 
   by Sravani Gurram (accessible through Canvas conversation)
 
-### How to set up dataset:
+------------------------------------------------------------------------------------------------------------------------------------------
+
+## How to set up dataset:
 1. Download FakeAVCeleb_v1.2 from the shared Google Drive link on Canvas
 2. Extract the folder
 3. Place it in the root project directory so the path is:
